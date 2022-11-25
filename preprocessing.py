@@ -7,11 +7,11 @@ import cv2
 import argparse
 parser = argparse.ArgumentParser(description="path files input and out file and csv file add resesize value and size "
                                              "or it will take default values")
-parser.add_argument("--input",metavar="in",type=str,help=" input file path")
-parser.add_argument("--output",metavar="out",type=str,help=" out file path")
-parser.add_argument("--csv",metavar="csv",type=str,help=" csv file path")
-parser.add_argument("--resize",metavar="r",type=int,help=" input file path")
-parser.add_argument("--size",metavar="s",type=int,help=" input file path")
+parser.add_argument("--input",metavar="in",type=str,help=" input file path", required=True)
+parser.add_argument("--output",metavar="out",type=str,help=" out file path",required=True)
+parser.add_argument("--csv",metavar="csv",type=str,help=" csv file path",required=True)
+parser.add_argument("--resize",metavar="r",type=int,help=" input file path", default=1028)
+parser.add_argument("--size",metavar="s",type=int,help=" input file path", default=512)
 args = parser.parse_args()
 print(args)
 data = pd.read_csv(args.csv)
